@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<style>
+//@import "http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
+body{font-family: 'Ropa Sans', sans-serif; color:#000; font-size:14px; color:#000}
+li,ul,body,input{margin:0; padding:0; list-style:none}
+#login-form{width:350px; background:#FFF; margin:0 auto; margin-top:20px; background:#f8f8f8; overflow:hidden; border-radius:7px}
+.form-header{display:table; clear:both}
+.form-header label{display:block; cursor:pointer; z-index:999}
+.form-header li{margin:0; line-height:40px; width:175px; text-align:center; background:#eee; font-size:18px; float:left; transition:all 600ms ease}
+
+/*sectiop*/
+.section-out{width:700px; float:left; transition:all 600ms ease}
+.section-out:after,.similar:after{content:''; clear:both; display:table}
+.section-out section{width:350px; float:left}
+
+.login{padding:20px}
+.ul-list{clear:both; display:table; width:100%}
+.ul-list:after{content:''; clear:both; display:table}
+.ul-list li{ margin:0 auto; margin-bottom:12px}
+.input{background:#fff; transition:all 800ms; width:247px; border-radius:3px 0 0 3px; font-family: 'Ropa Sans', sans-serif; border:solid 1px #ccc; border-right:none; outline:none; color:#999; height:40px; line-height:40px; display:inline-block; padding-left:10px; font-size:16px}
+.input,.login span.icon{vertical-align:top}
+.login span.icon{width:50px; transition:all 800ms; text-align:center; color:#999; height:40px; border-radius:0 3px 3px 0; background:#e8e8e8; height:40px; line-height:40px; display:inline-block; border:solid 1px #ccc; border-left:none; font-size:16px}
+.input:focus:invalid{border-color:red}
+.input:focus:invalid+.icon{border-color:red}
+.input:focus:valid{border-color:green}
+.input:focus:valid+.icon{border-color:green}
+#check,#check1{top:1px; position:relative}
+.btn{border:none; outline:none; background:#0099CC; border-bottom:solid 4px #006699; font-family: 'Ropa Sans', sans-serif; margin:0 auto; display:block; height:40px; width:100%; padding:0 10px; border-radius:3px; font-size:16px; color:#FFF}
+
+.social-login{padding:15px 20px; background:#f1f1f1; border-top:solid 2px #e8e8e8; text-align:center}
+.social-login a{display:inline-block; height:35px; line-height:35px; width:35px; margin:0 3px; text-decoration:none; color:#FFFFFF}
+.form a i.fa{line-height:55px; color:#000;}
+.fb{background:#305891} .tw{background:#2ca8d2} .gp{background:#ce4d39} .in{background:#006699}
+.remember{width:50%; display:inline-block; clear:both; font-size:14px}
+.remember:nth-child(2){text-align:right}
+.remember a{text-decoration:none; color:#666}
+
+.hide{display:none}
+
+/*swich form*/
+#signup:checked~.section-out{margin-left:-350px}
+#login:checked~.section-out{margin-left:0px}
+#login:checked~div .form-header li:nth-child(1),#signup:checked~div .form-header li:nth-child(2){background:#e8e8e8}
+
+.user-image{padding:20px 0; text-align:center}
+</style>
+</head>
+<body>
+
+<div id="login-form">
+<input type="radio" checked id="login" name="switch" class="hide">
+<input type="radio" id="signup" name="switch" class="hide">
+<div>
+<ul class="form-header">
+<li><label for="login"><i class="fa fa-lock"></i> LOGIN</label></li>
+<li><label for="signup"><i class="fa fa-credit-card"></i> SIGNUP</label></li>
+</ul>
+</div>
+<!--div class="user-image"><i class="fa fa-user user"></i></div-->
+<div class="section-out">
+<section class="login-section">
+<div class="login">
+<form method="post" action="index.php" name="loginform">
+	<ul class="ul-list">
+	<li>
+	<input id="user_name" class="input" type="text" name="user_name" placeholder="Username" required/><span class="icon"><i class="fa fa-user"></i></span>
+	</li>
+	<li>
+	<input id="user_password" class="input" type="password" name="user_password" autocomplete="off" placeholder="Password" required /><span class="icon"><i class="fa fa-lock"></i></span>
+	</li>
+	<span class="remember"><input type="checkbox" id="user_rememberme" name="user_rememberme" value="1" ><label for="check">&nbsp;Remember Me</label></span><span class="remember"><a href="password_reset.php">&nbsp;&nbsp;&nbsp;Forgot Password</a></span>
+	</li>
+	<li></li>
+	<li><input type="submit" name="login" value="SIGN IN" class="btn" "></li> <!--onclick="closeloginpage();-->
+	</ul>
+</form>
+	</div>
+	<div class="social-login">Or sign in with <br/><br/>
+		<center>
+		<a style="background-image:url('images/icon/wechat.jpg');background-size:contain;width:40px;height:40px;border-radius:50%;"></a>
+		<a style="background-image:url('images/icon/qq.jpg');background-size:contain;width:40px;height:40px;border-radius:50%;"></a>
+		<!--a id="qqLoginBtn"></a-->
+		<a style="background-image:url('images/icon/weibo.jpg');background-size:contain;width:40px;height:40px;border-radius:50%;"></a>
+		<br/>
+		</center>
+	</div>
+</section>
+
+<section class="signup-section">
+<div class="login">
+<form method="post" target="_self" action="COMPONENT/LOGIN/register.php" name="registerform">
+	<ul class="ul-list">
+	<li>
+	<input id="user_name" class="input" type="text" name="user_name" placeholder="Username" required/><span class="icon"><i class="fa fa-user"></i></span>
+	</li>
+	<li>
+	<input id="user_email" class="input" type="email" name="user_email" placeholder="Email" required /><span class="icon"><i class="fa fa-user"></i></span>
+	</li>
+	<li>
+	<input id="user_password_new" class="input" type="password" name="user_password_new" pattern=".{6,}" autocomplete="off" placeholder="New Password" required /><span class="icon"><i class="fa fa-lock"></i></span>
+	</li>
+	<li>
+	<input id="user_password_repeat" class="input" type="password" name="user_password_repeat" pattern=".{6,}" autocomplete="off" placeholder="Repeat Password" required /><span class="icon"><i class="fa fa-lock"></i></span>
+	</li>
+	<li>
+	<img src="COMPONENT/LOGIN/tools/showCaptcha.php" alt="captcha" height="40px" /> <input type="text" name="captcha" style="vertical-align:top;width:210px;height:40px;font-size:30px;text-align:center;" placeholder="CAPTCHA"  required />
+	</li>
+	
+	<li><input type="submit" name="register"  value="SIGN UP" class="btn"></li>
+	</ul>
+</form>
+</section>
+</div>
+</div>
+</body>
+	<script type="text/javascript">
+		/* var cbLoginFun = function(oInfo, oOpts){
+			alert(oInfo.nickname); // 昵称
+			alert(oOpts.btnId);    // 点击登录的按钮Id
+		};
+		QC.Login({
+		   //btnId：插入按钮的节点id，必选
+		   btnId:"qqLoginBtn",    
+		   //用户需要确认的scope授权项，可选，默认all
+		   scope:"all",
+		   //按钮尺寸，可用值[A_XL| A_L| A_M| A_S|  B_M| B_S| C_S]，可选，默认B_S
+		   size: "C_S"
+		}, cbLoginFun);
+		var QQbtn = document.getElementById('qqLoginBtn');
+		var child = QQbtn.getElementsByTagName('img');
+		child.src='images/icon/qq.jpg'; */
+	</script>
+</html>

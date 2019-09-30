@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="../../js/dragiframe.js"></script>
+	<script type="text/javascript" src="../../js/jquery-2.1.1.js"></script>
+	
+	<link rel="stylesheet" href="../../css/style.css" />
+<style>
+body{
+	background:rgba(52, 27, 43, 0.5);
+}
+#mainbody, #title{
+	color:#fff;
+	background:transparent;
+}
+.TitleName{
+	float:left;
+	margin-top: 30px;
+	margin-left: 100px;
+	font-size:20px;
+	width:130px;
+	height:100px;
+}
+</style>
+</head>
+<script>
+ $(window).load(function() {
+		addHandle(document.getElementById('title'), window);
+		resizedialog();
+  });
+</script>
+<body>
+    <div id="title" name="title" style="cursor: move; border:none;">
+      <div id='name' style="font-size:5px; font-style:normal; margin-top:6px;">About</div>
+      <div id='Closeicons'>
+		  <a >
+		  <img src="../../images/close.png" onmouseover="changeImage(this)" onmouseout="rebackImage(this)" onclick="parent.closeVersionDialogbox();" style="cursor:default;">
+		  </a>
+	  </div>
+	</div>
+	<div id="mainbody">
+	<center>
+		<div class="TitleName">
+		G3D MAP TOOL
+		<br/>
+		Beta Version</div>
+	</center>
+	</div>
+</body> 
+	<script>
+		
+		//Close button hover event
+		function changeImage(x){
+			x.src="../../images/closer.png"
+		}
+		function rebackImage(x){
+			x.src="../../images/closew.png"
+		}
+		//Resizing main dialog
+		//Resizing all component to fit window
+		function resizedialog(){
+			var width = 315;
+			var height= 200;
+			document.body.style.width = width;
+			document.body.style.height = height;
+			parent.document.getElementById('dialogversionbox').width = width;
+			parent.document.getElementById('dialogversionbox').height = height;
+			parent.document.getElementById('dialogbase1').style.left = "20%";
+			parent.document.getElementById('dialogbase1').style.top = "25%";
+			parent.document.getElementById('dialogbase1').style.marginLeft =(-(width/2)).toString() + "px";
+			parent.document.getElementById('dialogbase1').style.marginTop=(-(height/2)).toString() + "px";
+		}
+	</script>
+	
+</html>  

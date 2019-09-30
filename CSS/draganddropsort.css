@@ -1,0 +1,55 @@
+
+li { 
+  MARGIN-BOTTOM: 10px 
+} 
+ul { 
+  MARGIN-TOP: 5px 
+} 
+.DragContainer { 
+  BORDER-RIGHT: #669999 2px solid; PADDING-RIGHT: 5px; BORDER-TOP: #669999 2px solid; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 5px; MARGIN: 3px; BORDER-LEFT: #669999 2px solid; WIDTH: 50px; PADDING-TOP: 5px; BORDER-BOTTOM: #669999 2px solid 
+} 
+.OverDragContainer { 
+  BORDER-RIGHT: #669999 2px solid; PADDING-RIGHT: 5px; BORDER-TOP: #669999 2px solid; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 3px; BORDER-LEFT: #669999 2px solid; WIDTH: 50px; PADDING-TOP: 5px; BORDER-BOTTOM: #669999 2px solid 
+} 
+.OverDragContainer { 
+  BACKGROUND-COLOR: #eee 
+} 
+.DragBox { 
+  WIDTH: 48px; HEIGHT:48px;
+} 
+.OverDragBox { 
+  WIDTH: 48px;HEIGHT:48px; 
+  FONT-SIZE: 10px; CURSOR: pointer;  FONT-FAMILY: verdana, tahoma, arial; BACKGROUND-COLOR: #eee 
+} 
+.DragDragBox { 
+  WIDTH: 48px;HEIGHT:48px; 
+  FONT-SIZE: 10px;  FONT-FAMILY: verdana, tahoma, arial; BACKGROUND-COLOR: #eee 
+} 
+.miniDragBox { 
+  BORDER-RIGHT: #000 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #000 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 10px; MARGIN-BOTTOM: 5px; PADDING-BOTTOM: 2px; BORDER-LEFT: #000 1px solid; WIDTH: 94px; CURSOR: pointer; PADDING-TOP: 2px; BORDER-BOTTOM: #000 1px solid; FONT-FAMILY: verdana, tahoma, arial; BACKGROUND-COLOR: #eee 
+} 
+.OverDragBox { 
+  BACKGROUND-COLOR: #ffff99 
+} 
+.DragDragBox { 
+  BACKGROUND-COLOR: #ffff99 
+} 
+.DragDragBox { 
+  FILTER: alpha(opacity=50); BACKGROUND-COLOR: #ff99cc 
+} 
+LEGEND { 
+  FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #666699; FONT-FAMILY: verdana, tahoma, arial 
+} 
+FIELDSET { 
+  PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; PADDING-TOP: 3px 
+} 
+.History { 
+  FONT-SIZE: 10px; OVERFLOW: auto; WIDTH: 100%; FONT-FAMILY: verdana, tahoma, arial; HEIGHT: 82px 
+} 
+#DragContainer8 { 
+  BORDER-RIGHT: #669999 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #669999 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 0px; BORDER-LEFT: #669999 1px solid; WIDTH: 48px;HEIGHT:48px;  PADDING-TOP: 5px; BORDER-BOTTOM: #669999 1px solid; HEIGHT: 110px 
+} 
+.miniDragBox { 
+  FLOAT: left; MARGIN: 0px 5px 5px 0px; WIDTH: 48px;HEIGHT:48px; 
+} 
+pre{border:1 solid #CCC;background-color:#F8F8F0;padding:10px;} 

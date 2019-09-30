@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+  <head>
+    <style type="text/css">
+      html {
+        font: 10px Verdana, sans-serif;
+        color: white;
+      }
+
+      body {
+        background-color: white;
+        overflow:hidden;
+      }
+
+      #Screenshot {
+        background: url('images/MAPG935.png');
+		background-repeat:no-repeat;
+		background-size:contain;
+      }
+    </style>
+  </head>
+  <body onload="autosize();">
+    <center><div id="Screenshot" /></center>
+    <script type="text/javascript" src="dist/html2canvas.js"></script>
+    <script type="text/javascript">
+        function autosize() {
+            var width = document.documentElement.clientWidth ;
+            var height = document.documentElement.clientHeight;
+            document.getElementById("Screenshot").setAttribute('style', 
+                'width:'  + (width)  + 'px;'+
+                'height:' + (height) + 'px;'+
+                'margin:' + (0) + 'px;'+
+                'margin-bottom: 0px;'+
+
+                '-webkit-transform : scale(0.9) translateX(' + (width*0.05) + 'px);' +
+                '-webkit-transform-origin : 0px 25% 0px; '+
+                '-webkit-transition : all 0.5s ease;'+
+                '-webkit-transform-style : preserve-3d;'+
+                'box-sizing : border-box;'
+                );
+        }
+
+        html2canvas(document.body).then(function (canvas) {
+            canvas.setAttribute('style','display:none;');
+            document.body.appendChild(canvas);
+        });
+    </script>
+  </body>
+
+</html>

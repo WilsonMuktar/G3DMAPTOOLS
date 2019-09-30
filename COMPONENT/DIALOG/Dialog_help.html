@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="../../js/dragiframe.js"></script>
+	<script type="text/javascript" src="../../js/jquery-2.1.1.js"></script>
+    <!--SCROLLBAR UI-->
+	<script type="text/javascript" src="../../js/jquery.nicescroll.js"></script>
+	
+	<link rel="stylesheet" href="../../css/style.css" />
+<style>
+body{
+	background:rgba(52, 27, 43, 0.5);
+}
+#mainbody, #title{
+	color:#fff;
+	background:transparent;
+}
+.TitleName{
+	left:50;
+	font-size:20px;
+}
+.Instruction{
+	margin-left:40px;
+	margin-right:30px;
+	margin-top:12px;
+	font-size:15px;
+	height:80%;
+}
+</style>
+</head>
+<script>
+$(window).load(function() {
+	addHandle(document.getElementById('title'), window);
+	resizedialog();
+});
+</script>
+<body>
+    <div id="title" name="title" style="cursor: move; border:none;">
+      <div id='name' style="font-size:5px; font-style:normal; margin-top:6px;">Help</div>
+      <div id='Closeicons'>
+		  <a >
+		  <img src="../../images/close.png" onmouseover="changeImage(this)" onmouseout="rebackImage(this)" onclick="parent.closeHelpDialog();" style="cursor:default;">
+		  </a>
+	  </div>
+	</div>
+	<div id="mainbody">
+	<center>
+		<div class="TitleName">G3D MAP TOOL</div>
+	</center>
+		<div class="Instruction">
+			<b>Follow These steps to Increase Cache Memory in Google Chrome Browser</b>
+			</br>1. Right Click on Chrome Icon on Desktop->> click on Properties.
+			</br>2. Click on shortcut tab.
+			</br>3. Click the Target Filed and press “END” key.
+			</br>4. Now, give a space and TYPE “--disk-cache-size=10000000” (Note- you can also modify the number after Size. It represents the space that you would like to give for dish cache space.)
+			</br>5. Click “OK” and restart your Browser.
+
+			</br></br><b>Follow These steps to Increase Cache Memory in Internet Explorer</b>
+			</br>1. Start Internet Explorer.
+			</br>2. Click Tool icon.
+			</br>3. Now Select Internet Option.
+			</br>4. Now a pop-up window will appear.
+			</br>5. In “Temporary Internet Files”, select automatically and write the size of memory you want to give (1ooooooMB) or more, if you would like to give.
+			</br>6. Click OK and save your changes.
+			</br>7. Again click OK->>Apply again to close the windows.
+
+			</br></br><b>Follow these steps to Increase Cache memory in Mozilla Firefox</b>
+			</br>1. Start Firefox.
+			</br>2. Click on Tools- >> Options ->> Advanced.
+			</br>3. In cache web content, choose “Override automatic cache management”.
+			</br>4. Write the size of the memory you want to Give (100000MB) or more, if you would like to give.
+			</br>5. Click on OK to save the setting.
+			
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+		</div>
+	</div>
+</body> 
+	<script>
+		
+		//Close button hover event
+		function changeImage(x){
+			x.src="../../images/closer.png"
+		}
+		function rebackImage(x){
+			x.src="../../images/closew.png"
+		}
+		//Resizing main dialog
+		//Resizing all component to fit window
+		function resizedialog(){
+			var width = 750;
+			var height= 500;
+			document.body.style.width = width;
+			document.body.style.height = height;
+			parent.document.getElementById('dialoghelp').width = width;
+			parent.document.getElementById('dialoghelp').height = height;
+			parent.document.getElementById('dialogbase6').style.left ="50%";
+			parent.document.getElementById('dialogbase6').style.top = "45%";
+			parent.document.getElementById('dialogbase6').style.marginLeft =(-(width/2)).toString() + "px";
+			parent.document.getElementById('dialogbase6').style.marginTop=(-(height/2)).toString() + "px";
+		}
+		
+		//FIX stylish scrollbar
+		$(window).ready(
+			function(){
+				$(".instruction").niceScroll({cursorcolor:"#00F",cursoropacitymax:"0.5",cursorwidth :"2px"});
+			}
+		);
+	</script>
+	
+</html>  

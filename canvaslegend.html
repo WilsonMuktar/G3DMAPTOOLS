@@ -1,0 +1,63 @@
+<body style="background-color:lightblue">
+</body>
+
+<script>
+
+	var txtcanvas = document.createElement('canvas');
+	txtcanvas.style.width = 300;
+	txtcanvas.style.height = 500;
+	document.body.appendChild(txtcanvas);
+	var context = txtcanvas.getContext('2d');
+    txtcanvas.width = 400;
+    txtcanvas.height = 700;
+	Legends(context,1,0,0);
+	
+	function Legend(context,s,x,y){
+		DrawText(context,"Legend",x+18,y+(s*15),"bold "+s*12+"pt");
+		DrawText(context,"yenwie_countries",x+18,y+(s*40),s*12+"pt");
+		DrawText(context,"Population",x+18,y+(s*62),s*12+"pt");
+		DrawRectangle(context,x+18,y+(s*90),s*50,s*50,"#FF0000");
+		DrawText(context,"0",x+(s*80),y+(s*95),s*12+"pt");
+		DrawRectangle(context,x+18,y+(s*130),s*50,s*40,"#00FF00");
+		DrawText(context,"0",x+(s*80),y+(s*140),s*12+"pt");
+		DrawRectangle(context,x+18,y+(s*170),s*50,s*40,"#0000FF");
+		DrawText(context,"0",x+(s*80),y+(s*180),s*12+"pt");
+		DrawRectangle(context,x+18,y+(s*210),s*50,s*50,"#00FF00");
+		DrawText(context,"0",x+(s*80),y+(s*220),s*12+"pt");
+		DrawRectangle(context,x+18,y+(s*260),s*50,s*70,"#0000FF");
+		DrawText(context,"0",x+(s*80),y+(s*270),s*12+"pt");
+		DrawText(context,"0",x+(s*80),y+(s*340),s*12+"pt");
+	}
+	
+
+	function Legends(context,s,x,y){
+		DrawText(context,"Legend",x+18,y+(s*15),"bold "+s*12+"pt");
+		DrawText(context,"yenwie_countries",x+18,y+(s*40),s*12+"pt");
+		DrawText(context,"Population",x+18,y+(s*62),s*12+"pt");
+		DrawRectangle(context,x+18,y+(s*90),s*55,s*55,"#FF0000");
+		DrawText(context,"0",x+(s*90),s*120,s*12+"pt");
+		DrawRectangle(context,x+18,y+(s*155),s*55,s*55,"#00FF00");
+		DrawText(context,"0",x+(s*90),s*190,s*12+"pt");
+	}
+	
+	function DrawText(context,label,x,y,f){
+		f = f || "12pt";
+		context.save();
+		context.textAlign = "left";
+		context.font = f+" Microsoft YaHei";
+		context.lineWidth = 2; 
+		context.strokeStyle = 'white';
+		context.strokeText(label,x,y);
+		context.font = f+" Microsoft YaHei";
+		context.fillStyle = 'black';
+		context.fillText(label,x,y);
+		context.restore();
+	}
+	
+	function DrawRectangle(context,x,y,w,h,c){
+		context.save();
+		context.fillStyle = c;
+		context.fillRect(x,y,w,h);
+		context.restore();
+	}
+</script>

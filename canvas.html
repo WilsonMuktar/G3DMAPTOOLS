@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+</head>
+<body>
+<script>
+	document.body.appendChild(FlagCanvas("images/flag/indonesia.png","INDONESIA","印尼"));
+	
+	function FlagCanvas(flagsrc,flagen,flagzh){
+		var canvas = document.createElement("canvas");
+		var context = canvas.getContext('2d');
+		var flagimage = new Image();
+		flagimage.src = flagsrc;
+		flagimage.onload = function () 
+		{ 
+			var width = flagimage.width;
+			var height = flagimage.height;
+			context.drawImage(flagimage,0,0,width,height,5,0,width, height); 
+		}
+		context.save();
+		context.textAlign = "center";
+		var fontSize = Math.floor(canvas.height / 25);
+		context.font = "bold " + fontSize + "pt Helvetica";
+		context.fillText(flagen, 30, 55);
+		var fontSize = Math.floor(canvas.height / 20);
+		context.font = "bold " + fontSize + "pt Helvetica";
+		context.fillText(flagzh, 30, 66);
+		context.restore();
+		return canvas;
+	}		
+</script>
+</body>
+</html>
